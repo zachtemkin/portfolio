@@ -11,13 +11,6 @@
   display: flex;
 }
 
-.project-list {
-  @include mixins.fit-to(tablet) {
-    @include mixins.col(10);
-    @include mixins.col-offset(1);
-  }
-}
-
 .project-title {
   @include mixins.headerFontFamily;
   color: #127658;
