@@ -1,0 +1,73 @@
+@use "sass:math";
+
+//breakpoints
+@mixin fit-to($point) {
+  @if $point == desktop {
+    @media screen and (min-width: 1024px) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media screen and (min-width: 720px) {
+      @content;
+    }
+  }
+}
+
+//grid parameters
+$col-gutter: 1rem;
+$col-offset: 0;
+
+//grid mixin
+@mixin grid {
+  margin: 0 auto;
+  width: 100%;
+
+  @include fit-to(tablet) {
+    width: 100%;
+  }
+  @include fit-to(desktop) {
+    width: 100%;
+    max-width: 1220px;
+  }
+}
+
+//row mixin
+@mixin row {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  height: 100%;
+
+  @include fit-to(tablet) {
+    width: calc(100% - #{$col-gutter * 2});
+    margin-left: $col-gutter;
+    margin-right: $col-gutter;
+  }
+}
+
+//column mixin
+@mixin col($col, $gutter: $col-gutter) {
+  width: calc(#{percentage(math.div($col, 12))} - #{2 * $gutter});
+  margin-left: $gutter;
+
+  &:not(:last-child) {
+    margin-right: $gutter;
+  }
+}
+
+@mixin col-offset($col-offset, $gutter: $col-gutter) {
+  @if ($col-offset >= 0) {
+    margin-left: calc(
+      #{percentage(math.div($col-offset, 12))} + #{$gutter}
+    ) !important;
+  }
+}
+
+//typography
+@mixin headerFontFamily {
+  font-family: futura-pt, helvetica, arial, sans-serif;
+}
+
+@mixin bodyFontFamily {
+  font-family: franklin-gothic-urw, sans-serif;
+}
