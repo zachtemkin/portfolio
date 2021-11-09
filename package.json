@@ -17,6 +17,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "classnames": "^2.3.1",
     "gatsby": "^4.1.0",
     "gatsby-plugin-extract-image-colors": "^0.0.14",
     "gatsby-plugin-gatsby-cloud": "^4.1.0",

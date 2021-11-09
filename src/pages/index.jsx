@@ -3,28 +3,26 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import IntroBlock from "../components/introBlock";
 import ProjectPreview from "../components/projectPreview";
-import { projectList } from "../components/layout.module.scss";
 
 const IndexPage = ({ data }) => {
   return (
     <Layout pageTitle='Zach Temkin, Product Designer'>
       <IntroBlock />
-      <div className={projectList}>
-        {data.allMdx.nodes.map((node) => (
-          <ProjectPreview
-            id={node.id}
-            slug={node.slug}
-            type={node.frontmatter.type}
-            title={node.frontmatter.title}
-            team={node.frontmatter.team}
-            time_frame={node.frontmatter.time_frame}
-            hero_image={
-              node.frontmatter.hero_image.childImageSharp.gatsbyImageData
-            }
-            tags={node.frontmatter.tags}
-          />
-        ))}
-      </div>
+      {data.allMdx.nodes.map((node) => (
+        <ProjectPreview
+          id={node.id}
+          slug={node.slug}
+          type={node.frontmatter.type}
+          title={node.frontmatter.title}
+          team={node.frontmatter.team}
+          time_frame={node.frontmatter.time_frame}
+          hero_image={
+            node.frontmatter.hero_image.childImageSharp.gatsbyImageData
+          }
+          tags={node.frontmatter.tags}
+          theme_color={node.frontmatter.theme_color}
+        />
+      ))}
     </Layout>
   );
 };
@@ -42,12 +40,13 @@ export const query = graphql`
           time_frame
           team
           type
+          theme_color
           tags {
             tag
           }
           hero_image {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }

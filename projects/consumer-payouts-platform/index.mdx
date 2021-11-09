@@ -1,13 +1,14 @@
 ---
 title: "Consumer Payouts Platform"
 date: "2021-11-05"
-time_frame: "August 2020"
+time_frame: "July 2021"
 team: "Visa – Digital Partnerships & Fintech"
 type: "professional"
 tags:
     - tag: "ux design"
     - tag: "visual design"
-hero_image: "./zhu-yunxiao-7pPdT3QKudo-unsplash.jpg"
+hero_image: "./pop_hero-image.png"
+theme_color: "#117ACA"
 ---
 
 ## Background
@@ -29,9 +30,10 @@ Create a white-labeled digital service which can alert customers to newly issued
 
 ### Timeline
 
-2 weeks
-wk 1: Become familiar with the client’s existing experience and challenges; design an improved experience; Review designs with client leadership team.
-wk2: Execute changes from previous review; Final review with leadership team.
+2 weeks:
+- __wk 1:__ Become familiar with the client’s existing experience and challenges; design an improved experience; Review designs with client leadership team.
+
+- __wk2:__ Execute changes from previous review; Final review with leadership team.
 
 ### Early Results
 
@@ -58,6 +60,10 @@ There were a few stand-out issues with the existing flow which I hypothesized we
 - #### Misalignment to understanding user mindset  
     - Users of this product are individuals collecting money from an insurance claim, and are likely under unusual stress. Past research experience I’ve had in similar domains lead me to believe that users of this product may forego getting their money faster if that process introduces ambiguity or confusion. They want to know exactly what’s happening with their money
 
+#### A few screens from the original experience
+
+![](./pop_1.png)
+
 ### Design Principles 
 
 Moving toward a solution, I gave myself some principles to aim for:
@@ -77,6 +83,10 @@ Working with the product team I decided to focus on a new user to the platform, 
 This user would need to select and set-up a payment method to receive money from a claim, and then execute the payout to that payment method. By showing a user with multiple claims I was able to explore methods for allowing a user to set up multiple payment methods in the case they may want to accept separate payouts using separate payment methods.
 
 ### High-level flows
+
+![](./pop_2.png)
+
+![](./pop_flow-sketch.jpg)
 
 #### Notification
 
@@ -104,24 +114,21 @@ I arrived at this flow after exploring several options and reviewing them with o
 
 Below are some early explorations that I evolved over the course of the sprint.
 
-![buildings](./zhu-yunxiao-7pPdT3QKudo-unsplash.jpg)
-```this is an image```
-
-![rocks](./victor-martin-HU-RjTPM-9k-unsplash.jpg)
-```this is an image```
-
 ### Landing Page
 
 an early concept I explored for the landing page using horizontally scrolling cards to represent available payments in a visually bold way to draw the users attention more clearly to the part of the experience with the most value to them. This concept would also make it easier for a user to set a unique payment method to distinct payouts.
-![street](./alan-w-7wW-98idweY-unsplash.jpg)
-```this is an image```
 
-![rocks](./victor-martin-HU-RjTPM-9k-unsplash.jpg)
-```this is an image```
+![](./pop_3.png)
+
+### Payout Card During Claim Payout
+
+![](./pop_4.png)
 
 ### Payment Method Selection
 
 I initially explored a list view for the payment selection screen, but using a carousel of cards allowed for more information to be presented to the user. It also helps returning users distinguish between choosing a type of payment to set up from a specific payment method, once set-up.
+
+![](./pop_5.png)
 
 ## Final Delivery
 
@@ -133,15 +140,20 @@ They have never claimed a payout before, and so are a new user to the payouts pl
 The user will need to log-in and set up at least one new payment method in order to get their money.
 
 Here, the user sets up a virtual card to collect their first payment, and then decides to use an instant bank transfer to collect their second payment.
-Notification
+
+### Notification
  
 Alex receives an email from Insurance Co. telling her that her claims have been approved and she has 2 payouts available.
+
+![](./pop_6.png)
 
 When a payment becomes available to a user, they receive an email notification. I designed a clear and concise template for an email that quickly demonstrates value to the user and has a clear call to action.
 
 ### Onboarding
  
 As a new user to the payouts platform, once she logs in, Alex gets some information about this new part of the Insurance Co. site, and what she is about to do.
+
+![](./pop_7.png)
 
 I designed a 3-page carousel to orient the user to the process they are about to begin, introduce them to the concept of setting up a payment method, and assure them that help and support will be available should they need it.
 
@@ -153,6 +165,8 @@ Below that is a prominent call-to-action to set up a new payment method, and bel
 
 Tapping “see details” on the payment card would bring her to a screen with all of the technical details related to that insurance claim. At the bottom of this screen Alex can get help from the insurance company if she has questions, and if her question is about this specific claim, all of the relevant information is passed along to the support agent.
 Support available on claim detail
+
+![](./pop_8.png)
 
 I tried to make the landing screen as clear and helpful as possible. The previous landing page had a lot of extraneous information exposed, and there were many different paths a user could take to being the flow.
 
@@ -170,10 +184,13 @@ She has five options available to her:
 - use routing and account numbers to initiate an ACH transfer to a bank account
 - request a mailed check
 
+![](./pop_9.png)
+
 My goal was to communicate these potentially hard to understand options in a concise and human way, while emphasizing the value of each option in terms of the time it would take the user to have access to their money.
 
 Going with a carousel of cards instead of a list allows for more information to be given to the user on payment methods that may be unfamiliar to them.
-Set-Up First Payment Method
+
+### Set-Up First Payment Method
 
 Alex chooses the first option, virtual card. She first sees a screen outlining the steps to set up this option.
 
@@ -182,6 +199,9 @@ Next, she confirms her personal information on file with Insurance Co., and proc
 Once issued, she sees a representation of her new card, a check-box indicating that this can be made her default payment method, and the ability to add the card to the digital wallet on her phone. 
 
 If she taps “done” she gets a final screen reminding her of what she's just done. 
+
+![](./pop_10.png)
+
 The flows to set up each method vary in the information needed from the user, and number of steps but I created a few key screens that would be present in each flow:
 
 - an intro screen describing what’s about to happen
@@ -192,6 +212,8 @@ The flows to set up each method vary in the information needed from the user, an
 
 Now that Alex has set up a payment method, she is brought to this screen where her first claim payout is displayed with the new virtual card applied to it. She can now collect the money for this claim on the virtual card.
 
+![](./pop_11.png)
+
 ### Claim next payout & change payment method
 
 Because Alex has more than one payout available, she is prompted to claim her next payout after successfully claiming the first. 
@@ -199,10 +221,21 @@ Because Alex has more than one payout available, she is prompted to claim her ne
 By default, the last payment method she set up – the virtual card – is applied to this payout. However, by tapping the pill showing the payment method, she exposes a bottom drawer containing the list of her existing payment methods, as well as a button to add a new payment method. 
 
 She chooses to tap this button, and is brought back to the carousel, where she now chooses to set up an Instant Bank Transfer.
+
+![](./pop_12.png)
+
+![](./pop_13.png)
+
 After linking her account, she is brought back to the payout screen with this payment method now applied. She claims the payment and returns home.
+
+![](./pop_14.png)
+
 From the home screen she can view her payment history and manage the different payment methods she’s set up.
 
+![](./pop_15.png)
+
 ## Conclusion
+
 The the new design is showing early signs of success. A higher percentage of users are successfully competing the new payment set-up flow and are collecting payouts using fast payment methods. The designs were recently shown at the Money 2020 conference and have helped the company win deals with new clients.
 
 If I were to continue working on this, I’d like to explore accessibility more deeply by testing with keyboard-only users, or low-sighted users to continue to refine the designs. 

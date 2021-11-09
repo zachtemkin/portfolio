@@ -1,10 +1,16 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import { page, mainContent } from "./layout.module.scss";
+import { MDXProvider } from "@mdx-js/react";
 import SiteHeader from "./siteHeader";
+import PullQuote from "./pullQuote";
+import { MdxLayout } from "./mdxLayout";
+import { page, mainContent } from "./layout.module.scss";
+import PropTypes from "prop-types";
 
-const Layout = ({ pageTitle, children }) => {
+const shortcodes = { PullQuote, MdxLayout };
+
+const Layout = ({ pageTitle, children, themeColor }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -16,7 +22,7 @@ const Layout = ({ pageTitle, children }) => {
   `);
 
   return (
-    <div className={page}>
+    <MDXProvider components={shortcodes}>
       <Helmet>
         <meta charSet='utf-8' />
         <meta name='theme-color' content='#127658' />
@@ -25,11 +31,17 @@ const Layout = ({ pageTitle, children }) => {
         </title>
         <link rel='canonical' href='http://zach.coffee' />
       </Helmet>
-
-      <SiteHeader siteTitle={data.site.siteMetadata.title} />
-      <main className={mainContent}>{children}</main>
-    </div>
+      <div className={page}>
+        <SiteHeader
+          siteTitle={data.site.siteMetadata.title}
+          themeColor={themeColor}
+        />
+        <main className={mainContent}>{children}</main>
+      </div>
+    </MDXProvider>
   );
 };
+
+SiteHeader.propTypes = { themeColor: PropTypes.string };
 
 export default Layout;

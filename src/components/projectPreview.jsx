@@ -18,15 +18,13 @@ const ProjectPreview = (props) => {
   return (
     <article key={props.id} className={projectPreview}>
       <div className={imageContainer}>
-        <GatsbyImage
-          image={props.hero_image}
-          loading='eager'
-          placeholder='blurred'
-        />
+        <GatsbyImage image={props.hero_image} />
       </div>
       <section className={projectInfo}>
         <p className={timeFrame}>{props.time_frame}</p>
-        <p className={team}>{props.team}</p>
+        <p className={team} style={{ color: props.theme_color }}>
+          {props.team}
+        </p>
         <h2 className={projectTitle}>
           <Link
             className={projectLink}
@@ -53,6 +51,7 @@ ProjectPreview.propTypes = {
   time_frame: PropTypes.string,
   hero_image: PropTypes.object,
   tags: PropTypes.array,
+  theme_color: PropTypes.string,
 };
 
 export default ProjectPreview;

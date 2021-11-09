@@ -13,18 +13,20 @@ import {
 const SiteHeader = (props) => {
   return (
     <div className={siteHeader}>
-      <Link to='/' className={logoContainer}>
-        <svg
-          height='100%'
-          viewBox='0 0 179 110'
-          preserveAspectRatio='xMinYMin meet'>
-          <path
-            d='M0 0v71.078l34.056-30.102 2.73 3.043L0 76.533V110h97.973V47.04L63.918 77.144 61.186 74.1l40.892-36.146V110h44.184V42.09H179V0H0z'
-            fill='#127658'
-            fill-rule='evenodd'
-          />
-        </svg>
-      </Link>
+      <div to='/' className={logoContainer}>
+        <Link to='/'>
+          <svg
+            height='100%'
+            viewBox='0 0 179 110'
+            preserveAspectRatio='xMinYMin meet'>
+            <path
+              d='M0 0v71.078l34.056-30.102 2.73 3.043L0 76.533V110h97.973V47.04L63.918 77.144 61.186 74.1l40.892-36.146V110h44.184V42.09H179V0H0z'
+              fill={props.themeColor ? props.themeColor : "#127658"}
+              fill-rule='evenodd'
+            />
+          </svg>
+        </Link>
+      </div>
       <nav className={mainNav}>
         <ul className={navLinks}>
           <li className={navLinkItem}>
@@ -48,6 +50,9 @@ const SiteHeader = (props) => {
   );
 };
 
-SiteHeader.propTypes = { siteTitle: PropTypes.string };
+SiteHeader.propTypes = {
+  siteTitle: PropTypes.string,
+  themeColor: PropTypes.string,
+};
 
 export default SiteHeader;
