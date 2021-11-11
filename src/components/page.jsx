@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import SiteHeader from "./siteHeader";
 import PullQuote from "./pullQuote";
-import { MdxLayout } from "./mdxLayout";
+import MdxLayout from "./mdxLayout";
 import PropTypes from "prop-types";
 import "./page.scss";
 
