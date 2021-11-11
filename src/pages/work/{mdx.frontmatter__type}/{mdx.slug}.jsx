@@ -10,24 +10,26 @@ const ProjectWriteup = ({ data }) => {
   const frontmatter = data.mdx.frontmatter;
 
   return (
-    <Page
-      pageTitle='Super Cool Blog Posts'
-      themeColor={data.mdx.frontmatter.theme_color}>
-      <h1
-        className='project-title col-8 col-offset-2'
-        style={{ color: data.mdx.frontmatter.theme_color }}>
-        {frontmatter.title}
-      </h1>
+    <Page pageTitle={frontmatter.title}>
       <ProjectInfo
-        time_frame={data.mdx.frontmatter.time_frame}
-        theme_color={data.mdx.frontmatter.theme_color}
-        team={data.mdx.frontmatter.team}
-        tags={data.mdx.frontmatter.tags}
+        themeColor={frontmatter.theme_color}
+        title={frontmatter.title}
+        time_frame={frontmatter.time_frame}
+        theme_color={frontmatter.theme_color}
+        team={frontmatter.team}
+        role={frontmatter.role}
+        tags={frontmatter.tags}
       />
-      <GatsbyImage image={image} />
-      <article className='write-up'>
-        <MDXRenderer>{data.mdx.body}</MDXRenderer>
-      </article>
+      {/* <div className='row'>
+        <div className='col-12'>
+          <GatsbyImage image={image} />
+        </div>
+      </div> */}
+      <div className='row'>
+        <article className='page__write-up col-12'>
+          <MDXRenderer>{data.mdx.body}</MDXRenderer>
+        </article>
+      </div>
     </Page>
   );
 };
@@ -39,6 +41,7 @@ export const query = graphql`
         title
         time_frame
         team
+        role
         theme_color
         tags {
           tag

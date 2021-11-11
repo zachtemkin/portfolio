@@ -4,10 +4,10 @@ import "./introBlock.scss";
 const IntroBlock = () => {
   return (
     <article className='intro-block row'>
-      <h1 className='intro-block__heading mobile-col-12 tablet-col-6'>
+      <h1 className='intro-block__heading mobile-col-12 tablet-col-5 desktop-col-6'>
         Zach Temkin, Designer
       </h1>
-      <div className='intro-block__intro-text mobile-col-12 tablet-col-6'>
+      <div className='intro-block__intro-text mobile-col-12 tablet-col-7 desktop-col-6'>
         <p className=''>
           I'm a designer with a knack for coding and a deep understanding of
           business practices. Currently on the Digital Partnerships &amp;

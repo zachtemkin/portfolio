@@ -11,8 +11,8 @@ const ProjectPreview = (props) => {
         <GatsbyImage image={props.hero_image} />
       </div>
       <section className='project-preview__project-info mobile-col-12 tablet-col-6'>
-        <p className='project-preview__team h5'>{props.team}</p>
-        <p className='project-preview__time-frame h5'>{props.time_frame}</p>
+        <p className='project-preview__team'>{props.team}</p>
+        <p className='project-preview__time-frame'>{props.time_frame}</p>
         <h2 className='project-preview__project-title'>
           <Link
             className='project-preview__project-link'

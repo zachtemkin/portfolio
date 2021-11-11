@@ -1,8 +1,8 @@
-$large-screen: 1024px;
+$large-screen: 1080px;
 $small-screen: 720px;
 
 @mixin mobile {
-  @media screen and (max-width: $small-screen) {
+  @media screen and (max-width: ($small-screen)) {
     @content;
   }
 }

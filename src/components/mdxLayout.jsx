@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
 
-import "./mdxLayout.module.scss";
+import "./mdxLayout.scss";
 
 const numCols = 12;
 
