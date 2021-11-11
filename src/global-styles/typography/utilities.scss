@@ -1,0 +1,99 @@
+@use "sass:math";
+
+$headerFontFamilies: "futura-pt", "HelveticaNeue", "Helvetica Neue", "Helvetica",
+  "Arial", "Lucida Grande", sans-serif;
+$bodyFontFamilies: "franklin-gothic-atf", "Linotype", "Book Antiqua", "Palatino",
+  "Times New Roman", "Times", serif;
+
+$base-font: 21px;
+
+$normalWeight: 400;
+$mediumWeight: 500;
+$boldWeight: 600;
+$heavyWeight: 700;
+
+$type-ratios: (
+  "minorSecond": 1.067,
+  "majorSecond": 1.125,
+  "minorThird": 1.2,
+  "majorThird": 1.25,
+  "perfectFourth": 1.333,
+  "augmentedFourth": 1.414,
+  "perfectFifth": 1.5,
+  "goldenRatio": 1.618,
+);
+
+@function strip-units($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+
+@function rem-to-px($value) {
+  @return strip-units($value) * strip-units($base-font) * 1px;
+}
+
+@function type-ratio($key) {
+  @return map-get($type-ratios, $key);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: math.clamp($base-font, $min-font-size, $min-font-size);
+      @include tablet {
+        font-size: calc(
+          #{$min-font-size} + #{strip-units($max-font-size - $min-font-size)} *
+            ((100vw - #{$min-vw}) / #{strip-units($max-vw - $min-vw)})
+        );
+      }
+      @include desktop {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+$type-base-size: 1rem;
+$type-size-ratio: type-ratio("augmentedFourth");
+
+$type-levels: 4, 3, 2, 1;
+
+$type-styles: ();
+$level-size: $type-base-size;
+
+@each $level in $type-levels {
+  $level-size: $level-size * $type-size-ratio;
+
+  $min_width: $small-screen;
+  $max_width: $large-screen;
+  $min_font: rem-to-px($level-size * 0.5);
+  $max_font: rem-to-px($level-size);
+
+  h#{$level},
+  .h#{$level} {
+    line-height: calc(2px + 2ex + 2px);
+    margin-bottom: 0.65em;
+    @include fluid-type($min_width, $max_width, $min_font, $max_font);
+  }
+}
+
+@mixin body {
+  font-family: $bodyFontFamilies;
+}
+
+@mixin headings {
+  font-family: $headerFontFamilies;
+}
+
+@mixin clear-list-style {
+  margin-left: 0;
+
+  li::before {
+    display: none;
+    content: "";
+  }
+}

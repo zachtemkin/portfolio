@@ -1,8 +1,8 @@
 import React from "react";
-import { pullQuote } from "./pullQuote.module.scss";
+import "./pullQuote.scss";
 
 const PullQuote = ({ children }) => {
-  return <div className={pullQuote}>{children}</div>;
+  return <div className='pull-quote'>{children}</div>;
 };
 
 export default PullQuote;

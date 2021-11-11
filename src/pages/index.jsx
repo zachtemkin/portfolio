@@ -1,12 +1,12 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
+import Page from "../components/page";
 import IntroBlock from "../components/introBlock";
 import ProjectPreview from "../components/projectPreview";
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout pageTitle='Zach Temkin, Product Designer'>
+    <Page pageTitle='Zach Temkin, Product Designer'>
       <IntroBlock />
       {data.allMdx.nodes.map((node) => (
         <ProjectPreview
@@ -23,7 +23,7 @@ const IndexPage = ({ data }) => {
           theme_color={node.frontmatter.theme_color}
         />
       ))}
-    </Layout>
+    </Page>
   );
 };
 

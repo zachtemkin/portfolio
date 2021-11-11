@@ -1,0 +1,58 @@
+@use "sass:math";
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: calc(100% + #{$gridPadding});
+  margin-left: #{math.div(-$gridPadding, 2)};
+  margin-right: #{math.div(-$gridPadding, 2)};
+}
+
+.row + .row {
+  margin-top: 1.5rem;
+}
+
+@function colWidth($i) {
+  @return calc(#{(math.div($i, $numCols)) * 100%} - #{$gridPadding});
+}
+
+@for $i from 1 through $numCols {
+  .col-#{$i} {
+    width: colWidth($i);
+    margin-left: #{math.div($gridPadding, 2)};
+    margin-right: #{math.div($gridPadding, 2)};
+  }
+
+  .col-offset-#{$i} {
+    margin-left: calc(#{colWidth($i)} + #{$gridPadding * 1.5});
+  }
+}
+
+@mixin deviceGrid($device) {
+  @for $i from 1 through $numCols {
+    .#{$device}-col-#{$i} {
+      width: colWidth($i);
+      margin-left: #{math.div($gridPadding, 2)};
+      margin-right: #{math.div($gridPadding, 2)};
+    }
+  }
+
+  @for $i from 1 through $numCols {
+    .#{$device}-col-offset-#{$i} {
+      margin-left: calc(#{colWidth($i)} + #{$gridPadding * 1.5});
+    }
+  }
+}
+
+@include mobile {
+  @include deviceGrid(mobile);
+}
+
+@include tablet {
+  @include deviceGrid(tablet);
+}
+
+@include desktop {
+  @include deviceGrid(desktop);
+}

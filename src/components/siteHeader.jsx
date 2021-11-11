@@ -1,20 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
-import {
-  navLinks,
-  navLinkItem,
-  navLinkText,
-  siteHeader,
-  mainNav,
-  logoContainer,
-} from "./siteHeader.module.scss";
+import "./siteHeader.scss";
 
 const SiteHeader = (props) => {
   return (
-    <div className={siteHeader}>
-      <div to='/' className={logoContainer}>
-        <Link to='/'>
+    <header className='site-header row'>
+      <div to='/' className='logo-container col-6'>
+        <Link className='logo' to='/'>
           <svg
             height='100%'
             viewBox='0 0 179 110'
@@ -27,26 +20,24 @@ const SiteHeader = (props) => {
           </svg>
         </Link>
       </div>
-      <nav className={mainNav}>
-        <ul className={navLinks}>
-          <li className={navLinkItem}>
-            <Link to='/' className={navLinkText}>
+      <nav className='main-nav col-6'>
+        <ul className='nav-links'>
+          <li className='nav-link-item'>
+            <Link to='/' className='nav-link-text'>
               Work
             </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to='/' className={navLinkText}>
+            <li className='nav-link-item'></li>
+            <Link to='/' className='nav-link-text'>
               About
             </Link>
-          </li>
-          <li className={navLinkItem}>
-            <Link to='/' className={navLinkText}>
+            <li className='nav-link-item'></li>
+            <Link to='/' className='nav-link-text'>
               Personal Projects
             </Link>
           </li>
         </ul>
       </nav>
-    </div>
+    </header>
   );
 };
 

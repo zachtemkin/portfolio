@@ -4,13 +4,18 @@ module.exports = {
     title: "Zach's Portfolio",
   },
   plugins: [
-    "gatsby-plugin-sass",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     "gatsby-transformer-remark",
+    {
+      resolve: "gatsby-plugin-sass",
+      options: {
+        additionalData: `@import '${__dirname}/src/global-styles/global-utilities';`,
+      },
+    },
     {
       resolve: `gatsby-remark-images`,
       options: {

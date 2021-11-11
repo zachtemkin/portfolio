@@ -1,0 +1,33 @@
+.page {
+  overflow-x: hidden;
+
+  &__main-content {
+    max-width: $maxWidth;
+    margin: 0 auto;
+  }
+}
+
+// .page {
+//   @include mixins.bodyFontFamily;
+//   @include mixins.grid;
+// }
+
+// .main-content {
+//   @include mixins.row;
+//   display: flex;
+// }
+
+// .project-title {
+//   @include mixins.headerFontFamily;
+//   @include mixins.col(8);
+//   @include mixins.col-offset(2);
+//   color: #127658;
+//   font-size: 3em;
+//   margin-bottom: 1rem;
+//   text-align: center;
+
+//   @include mixins.fit-to(tablet) {
+//     @include mixins.col(8);
+//     @include mixins.col-offset(2);
+//   }
+// }

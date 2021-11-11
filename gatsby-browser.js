@@ -1,1 +1,1 @@
-import "./src/global-styles/reset.sass";
+import "./src/global-styles/global-classes.scss";

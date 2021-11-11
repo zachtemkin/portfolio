@@ -1,0 +1,38 @@
+.project-preview {
+  display: flex;
+  margin-bottom: 3rem;
+  flex-flow: column nowrap;
+
+  @include tablet {
+    flex-flow: row nowrap;
+  }
+
+  &__project-info {
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  &__time-frame,
+  &__team {
+    @include headings;
+    color: #666;
+    font-weight: $mediumWeight;
+    margin-bottom: 0.125rem;
+  }
+
+  &__team {
+    color: $green;
+  }
+
+  &__project-title {
+    margin: 0.5rem 0;
+  }
+
+  &__tags {
+    margin: 0;
+
+    .tag {
+      margin-bottom: 0.25rem;
+    }
+  }
+}
