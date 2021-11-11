@@ -13,13 +13,13 @@ const ProjectPreview = (props) => {
       <section className='project-preview__project-info mobile-col-12 tablet-col-6'>
         <p className='project-preview__team'>{props.team}</p>
         <p className='project-preview__time-frame'>{props.time_frame}</p>
-        <h2 className='project-preview__project-title'>
+        <h3 className='project-preview__project-title'>
           <Link
             className='project-preview__project-link'
             to={`/work/${props.type}/${props.slug}`}>
             {props.title}
           </Link>
-        </h2>
+        </h3>
         <ul className='project-preview__tags'>
           {props.tags.map((item) => (
             <li className='tag h5'>{item.tag}</li>

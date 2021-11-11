@@ -18,10 +18,13 @@
     hr {
       width: 100%;
       margin-top: 2rem;
-      margin-left: div($gridPadding, 2);
-      margin-right: div($gridPadding, 2);
       margin-bottom: 0;
       border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    & > hr {
+      margin-left: div($gridPadding, 2);
+      margin-right: div($gridPadding, 2);
     }
 
     figcaption {
@@ -32,6 +35,14 @@
 
     &__chunk {
       margin-top: 1rem;
+
+      & > hr {
+        margin-bottom: 1rem;
+      }
+
+      & > hr:first-child {
+        margin-top: 0;
+      }
     }
   }
 }
