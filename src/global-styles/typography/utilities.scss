@@ -2,10 +2,10 @@
 
 $headerFontFamilies: "futura-pt", "HelveticaNeue", "Helvetica Neue", "Helvetica",
   "Arial", "Lucida Grande", sans-serif;
-$bodyFontFamilies: "franklin-gothic-atf", "Linotype", "Book Antiqua", "Palatino",
-  "Times New Roman", "Times", serif;
+$bodyFontFamilies: "ff-meta-serif-web-pro", "Georgia", "Book Antiqua",
+  "Palatino", "Times New Roman", "Times", serif;
 
-$base-font: 16px;
+$base-font: 18px;
 
 $normalWeight: 400;
 $mediumWeight: 500;
@@ -43,7 +43,7 @@ $type-ratios: (
 
   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
     & {
-      font-size: math.clamp($base-font, $min-font-size, $min-font-size);
+      font-size: math.clamp($base-font, $min-font-size, $max-font-size);
       @include tablet {
         font-size: calc(
           #{$min-font-size} + #{strip-units($max-font-size - $min-font-size)} *
@@ -68,9 +68,9 @@ $level-size: $type-base-size;
 @each $level in $type-levels {
   $level-size: $level-size * $type-size-ratio;
 
-  $min_width: $small-screen;
-  $max_width: $large-screen;
-  $min_font: rem-to-px($level-size * 0.5);
+  $min_width: 320px;
+  $max_width: 1000px;
+  $min_font: rem-to-px($level-size * 0.66);
   $max_font: rem-to-px($level-size);
 
   h#{$level},

@@ -5,6 +5,7 @@ import "./projectInfo.scss";
 const ProjectInfo = (props) => {
   return (
     <section className='page__project-info row'>
+      <hr className='col-12' />
       <div className='page__project-title-container mobile-col-12 tablet-col-8'>
         <h1 className='page__project-title'>{props.title}</h1>
       </div>

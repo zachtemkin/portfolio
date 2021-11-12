@@ -2,8 +2,12 @@
   &__main-content {
     max-width: $maxWidth;
     margin: 0 auto;
-    padding: 0 2.5rem;
+    padding: 0 1rem;
     overflow-x: hidden;
+
+    @include tablet {
+      padding: 0 2.5rem;
+    }
   }
 
   &__tags {

@@ -7,11 +7,11 @@ import "./projectBackground.scss";
 const ProjectBackground = (props) => {
   return (
     <section className='background-info'>
-      <div className='background-text row'>
-        <h2 className='header tablet-col-4 mobile-col-12'>
+      <div className='row'>
+        <h2 className='background-header tablet-col-4 mobile-col-12'>
           {props.backgroundHeading}
         </h2>
-        <div className='background-text tablet-col-8 mobile-col-12 h4'>
+        <div className='background-text tablet-col-8 mobile-col-12'>
           {props.backgroundText}
         </div>
       </div>
