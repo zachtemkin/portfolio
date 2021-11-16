@@ -1,0 +1,52 @@
+.page {
+  &__main-content {
+    max-width: $maxWidth;
+    margin: 0 auto;
+    padding: 0 1rem;
+    overflow-x: hidden;
+
+    @include tablet {
+      padding: 0 2.5rem;
+    }
+  }
+
+  &__tags {
+    margin: 0;
+  }
+
+  &__write-up {
+    h3 {
+      color: $green;
+    }
+
+    hr {
+      width: 100%;
+      margin-top: 2rem;
+      margin-bottom: 0;
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+
+    & > hr {
+      margin-left: div($gridPadding, 2);
+      margin-right: div($gridPadding, 2);
+    }
+
+    figcaption {
+      justify-content: flex-end;
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &__chunk {
+      margin-top: 1rem;
+
+      & > hr {
+        margin-bottom: 1rem;
+      }
+
+      & > hr:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

@@ -1,18 +1,17 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import Layout from "../components/layout";
+import Page from "../components/page";
 import IntroBlock from "../components/introBlock";
 import ProjectPreview from "../components/projectPreview";
 
 const IndexPage = ({ data }) => {
   return (
-    <Layout pageTitle='Zach Temkin, Product Designer'>
+    <Page pageTitle='Zach Temkin, Product Designer'>
       <IntroBlock />
       {data.allMdx.nodes.map((node) => (
         <ProjectPreview
           id={node.id}
-          slug={node.slug}
-          type={node.frontmatter.type}
+          slug={node.fields.slug}
           title={node.frontmatter.title}
           team={node.frontmatter.team}
           time_frame={node.frontmatter.time_frame}
@@ -22,34 +21,32 @@ const IndexPage = ({ data }) => {
           tags={node.frontmatter.tags}
         />
       ))}
-    </Layout>
+    </Page>
   );
 };
 
 export const query = graphql`
   query {
-    allMdx(
-      sort: { fields: frontmatter___date, order: ASC }
-      filter: { frontmatter: { type: { eq: "professional" } } }
-    ) {
+    allMdx(sort: { fields: frontmatter___date, order: ASC }) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
           time_frame
           team
-          type
           tags {
             tag
           }
           hero_image {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }
         id
-        slug
+        fields {
+          slug
+        }
       }
     }
   }

@@ -1,0 +1,7 @@
+.intro-block {
+  margin-bottom: 3rem;
+
+  @include tablet {
+    margin-bottom: 6em;
+  }
+}

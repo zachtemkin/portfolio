@@ -1,0 +1,42 @@
+.page__project-info {
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+
+  & > hr {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
+
+.page__team,
+.page__time-frame {
+  @include headings;
+  font-weight: $boldWeight;
+  margin-bottom: 0.5rem;
+}
+
+.page__time-frame {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.page__role {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.page__tags {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1rem 0 0;
+  padding-top: 1rem;
+
+  .tag {
+    display: inline-flex;
+    padding: 0.25em 0.5em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    text-align: center;
+  }
+}
