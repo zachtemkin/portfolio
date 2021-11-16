@@ -1,3 +1,10 @@
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development";
+
+require("dotenv").config({
+  path: `.env.${activeEnv}`,
+});
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
@@ -42,6 +49,12 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-page-creator`,
+      options: {
+        path: `${__dirname}/src/pages`,
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
@@ -58,12 +71,30 @@ module.exports = {
       __key: "pages",
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: `projects`,
-        path: `${__dirname}/projects/`,
+        name: `personalProjects`,
+        path: `${__dirname}/src/content/work/personal`,
+        ignore: [`${__dirname}/src/content/work/restricted/**`],
       },
-      __key: "projects",
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `restrictedCaseStudies`,
+        path: `${__dirname}/src/content/work/restricted/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `work`,
+        path: `${__dirname}/src/content/work/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/work/restricted/*`] },
     },
     {
       resolve: `gatsby-plugin-web-font-loader`,
@@ -73,5 +104,19 @@ module.exports = {
         },
       },
     },
+    // {
+    //   resolve: "gatsby-plugin-firebase",
+    //   options: {
+    //     credentials: {
+    //       apiKey: process.env.GATSBY_FIREBASE_APIKEY,
+    //       authDomain: process.env.GATSBY_FIREBASE_AUTHDOMAIN,
+    //       projectId: process.env.GATSBY_FIREBASE_PROJECTID,
+    //       storageBucket: process.env.GATSBY_FIREBASE_STORAGEBUCKET,
+    //       messagingSenderId: process.env.GATSBY_FIREBASE_MESSAGINGSENDERID,
+    //       appId: process.env.GATSBY_FIREBASE_APPID,
+    //       userEmail: process.env.GATSBY_FIREBASE_USER_EMAIL,
+    //     },
+    //   },
+    // },
   ],
 };

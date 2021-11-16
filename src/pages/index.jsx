@@ -11,8 +11,7 @@ const IndexPage = ({ data }) => {
       {data.allMdx.nodes.map((node) => (
         <ProjectPreview
           id={node.id}
-          slug={node.slug}
-          type={node.frontmatter.type}
+          slug={node.fields.slug}
           title={node.frontmatter.title}
           team={node.frontmatter.team}
           time_frame={node.frontmatter.time_frame}
@@ -20,7 +19,6 @@ const IndexPage = ({ data }) => {
             node.frontmatter.hero_image.childImageSharp.gatsbyImageData
           }
           tags={node.frontmatter.tags}
-          theme_color={node.frontmatter.theme_color}
         />
       ))}
     </Page>
@@ -29,18 +27,13 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(
-      sort: { fields: frontmatter___date, order: ASC }
-      filter: { frontmatter: { type: { eq: "professional" } } }
-    ) {
+    allMdx(sort: { fields: frontmatter___date, order: ASC }) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
           time_frame
           team
-          type
-          theme_color
           tags {
             tag
           }
@@ -51,7 +44,9 @@ export const query = graphql`
           }
         }
         id
-        slug
+        fields {
+          slug
+        }
       }
     }
   }

@@ -15,7 +15,7 @@ const SiteHeader = (props) => {
             <path
               d='M0 0v71.078l34.056-30.102 2.73 3.043L0 76.533V110h97.973V47.04L63.918 77.144 61.186 74.1l40.892-36.146V110h44.184V42.09H179V0H0z'
               fill={props.themeColor ? props.themeColor : "#127658"}
-              fill-rule='evenodd'
+              fillRule='evenodd'
             />
           </svg>
         </Link>

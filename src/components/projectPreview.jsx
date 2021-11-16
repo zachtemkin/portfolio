@@ -14,9 +14,7 @@ const ProjectPreview = (props) => {
         <p className='project-preview__team'>{props.team}</p>
         <p className='project-preview__time-frame'>{props.time_frame}</p>
         <h3 className='project-preview__project-title'>
-          <Link
-            className='project-preview__project-link'
-            to={`/work/${props.type}/${props.slug}`}>
+          <Link className='project-preview__project-link' to={props.slug}>
             {props.title}
           </Link>
         </h3>

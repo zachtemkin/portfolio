@@ -3,12 +3,11 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import SiteHeader from "./siteHeader";
-import PullQuote from "./pullQuote";
 import MdxLayout from "./mdxLayout";
 import PropTypes from "prop-types";
 import "./page.scss";
 
-const shortcodes = { PullQuote, MdxLayout };
+const shortcodes = { MdxLayout };
 
 const Page = ({ pageTitle, children, themeColor }) => {
   const data = useStaticQuery(graphql`
