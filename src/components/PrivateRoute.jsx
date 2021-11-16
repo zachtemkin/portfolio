@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LoginDialog from "../components/LoginDialog";
+import LoginDialog from "../components/loginDialog";
 import { setAuthStateObservers } from "../services/auth";
 
 const Checking = () => {
