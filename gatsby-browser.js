@@ -1,4 +1,3 @@
-// import "firebase/auth";
 import React from "react";
 import AuthProvider from "./src/context/auth";
 import "./src/global-styles/global-classes.scss";
