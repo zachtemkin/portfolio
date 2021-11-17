@@ -1,9 +1,7 @@
 import React from "react";
 import { Router, Redirect } from "@reach/router";
 import { graphql } from "gatsby";
-
 import PrivateRoute from "../../components/PrivateRoute";
-// import RestrictedProjectTemplate from "../../templates/restrictedProjectTemplate";
 import ProjectWriteupTemplate from "../../templates/projectWriteupTemplate";
 
 const Restricted = ({ data }) => {
@@ -18,15 +16,14 @@ const Restricted = ({ data }) => {
                 key={node.id}
                 component={() => (
                   <ProjectWriteupTemplate data={{ mdx: node }} />
-                  // <RestrictedProjectTemplate data={{ mdx: node }} />
                 )}
               />
             );
           default:
-            return [];
+            return <div />;
         }
       })}
-      <Redirect from='/work/restricted' to='/work' default noThrow />
+      <Redirect from='/work/restricted' to='/' default noThrow />
     </Router>
   );
 };

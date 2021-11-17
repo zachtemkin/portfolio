@@ -1,40 +1,32 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link, navigate } from "gatsby";
-import classnames from "classnames";
-import { handleLogin } from "../services/auth";
+import { AuthContext } from "../context/auth";
+import { auth } from "../utils/firebase";
+// import { handleLogin } from "../services/auth";
 
 const LoginDialog = (props) => {
   const [password, setPassword] = useState("");
-  const [checkingLogin, setCheckingLogin] = useState(false);
-  const [position, setPosition] = useState(undefined);
-  const [errorMessage, setErrorMessage] = useState("");
 
-  const inputRef = useRef(null);
+  const { setUser } = useContext(AuthContext);
 
-  const onSuccess = (userInfo) => {
-    setCheckingLogin(false);
-    setPassword("");
-    navigate(props.redirectPath);
-  };
+  const handleChange = (e) => setPassword(e.target.value);
 
-  const onFailure = (error) => {
-    // console.error(error.message, error.code);
-    setErrorMessage(error.message);
-    setPassword("");
-    setCheckingLogin(false);
-    console.log("failure");
-  };
-
-  const submitLogin = () => {
-    handleLogin(password, onSuccess, onFailure);
-  };
-
-  useEffect(() => {
-    if (inputRef && inputRef.current) {
-      inputRef.current.focus();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await signInWithEmailAndPassword(
+        auth,
+        process.env.GATSBY_FIREBASE_USER_EMAIL,
+        password
+      );
+      setUser(result.user);
+      navigate(props.redirectPath);
+    } catch (err) {
+      console.log(err.message);
     }
-  });
+  };
 
   return (
     <div>
@@ -55,23 +47,17 @@ const LoginDialog = (props) => {
               type='password'
               name='password'
               placeholder='password'
-              ref={inputRef}
               value={password}
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
+              onChange={handleChange}
             />
             <button
               className='login-dialog__submit'
               type='submit'
-              onClick={submitLogin}
-              onSubmit={submitLogin}>
+              onClick={handleSubmit}
+              onSubmit={handleSubmit}>
               Submitt
             </button>
           </form>
-          <p className='caption invert login-dialog__status-message'>
-            {errorMessage}
-          </p>
           <Link to='/'>Return to Work</Link>
         </div>
       </div>

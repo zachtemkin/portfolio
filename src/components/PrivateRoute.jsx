@@ -1,47 +1,18 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import LoginDialog from "../components/loginDialog";
-import { setAuthStateObservers } from "../services/auth";
+import { AuthContext } from "../context/auth";
+// import firebase from "gatsby-plugin-firebase";
 
-const Checking = () => {
-  return (
-    <div className='private-route__loader'>
-      <i className='fal fa-spin fa-spinner' />
-      checking...
-    </div>
-  );
+const PrivateRoute = ({ component: PathComponent, location, ...rest }) => {
+  const { user } = useContext(AuthContext);
+
+  if (!user) {
+    return <LoginDialog redirectPath={location.pathname} />;
+  }
+
+  if (user) {
+    return <PathComponent {...rest} />;
+  }
 };
-
-class PrivateRoute extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      authState: "checking",
-    };
-    setAuthStateObservers(
-      () => {
-        this.setState({ authState: "loggedIn" });
-      },
-      () => {
-        this.setState({ authState: "loggedOut" });
-      }
-    );
-  }
-
-  render() {
-    const { component: PathComponent, location, ...rest } = this.props;
-
-    if (this.state.authState === "loggedOut") {
-      return <LoginDialog redirectPath={location.pathname} />;
-    }
-
-    if (this.state.authState === "checking") {
-      return <Checking />;
-    }
-
-    if (this.state.authState === "loggedIn") {
-      return <PathComponent {...rest} />;
-    }
-  }
-}
 
 export default PrivateRoute;

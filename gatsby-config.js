@@ -104,19 +104,5 @@ module.exports = {
         },
       },
     },
-    // {
-    //   resolve: "gatsby-plugin-firebase",
-    //   options: {
-    //     credentials: {
-    //       apiKey: process.env.GATSBY_FIREBASE_APIKEY,
-    //       authDomain: process.env.GATSBY_FIREBASE_AUTHDOMAIN,
-    //       projectId: process.env.GATSBY_FIREBASE_PROJECTID,
-    //       storageBucket: process.env.GATSBY_FIREBASE_STORAGEBUCKET,
-    //       messagingSenderId: process.env.GATSBY_FIREBASE_MESSAGINGSENDERID,
-    //       appId: process.env.GATSBY_FIREBASE_APPID,
-    //       userEmail: process.env.GATSBY_FIREBASE_USER_EMAIL,
-    //     },
-    //   },
-    // },
   ],
 };
