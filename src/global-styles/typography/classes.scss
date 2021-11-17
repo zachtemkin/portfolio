@@ -1,4 +1,7 @@
 @use "sass:math";
+html {
+  font-size: $base-font;
+}
 
 body {
   @include body;

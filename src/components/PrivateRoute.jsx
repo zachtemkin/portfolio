@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import LoginDialog from "../components/loginDialog";
 import { AuthContext } from "../context/auth";
-// import firebase from "gatsby-plugin-firebase";
 
 const PrivateRoute = ({ component: PathComponent, location, ...rest }) => {
   const { user } = useContext(AuthContext);
