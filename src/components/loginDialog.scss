@@ -1,0 +1,102 @@
+$transition-duration: 1s;
+
+.login-dialog {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  &__screen {
+    padding-top: 6rem;
+  }
+
+  &__content {
+    opacity: 0;
+    transform: translateY(-40px);
+    animation-fill-mode: forwards;
+    animation-duration: $transition-duration;
+    animation-name: buildIn;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &__message {
+    @include headings;
+    font-weight: $mediumWeight;
+  }
+
+  &__input {
+    @include headings;
+    width: 50%;
+    font-weight: $mediumWeight;
+    background-color: transparent;
+    padding: 0.25rem 1rem;
+    border: 2px solid $black;
+    border-radius: 3px;
+    margin-right: 0.5rem;
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.7);
+    }
+  }
+
+  &__submit {
+    @include headings;
+    font-weight: $mediumWeight;
+    color: $off-white;
+    background-color: $green;
+    border: 2px solid $green;
+    border-radius: 3px;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    &:active {
+      background-color: $black;
+      border-color: $black;
+    }
+  }
+
+  &__email-link {
+    color: $green;
+    text-decoration: underline;
+  }
+
+  &__error-message {
+    @include headings;
+    font-weight: $mediumWeight;
+    color: #ea4b52;
+    padding: 0.5rem 1rem;
+    border: 2px solid #ea4b52;
+    border-radius: 3px;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+    &.error-message--is-visible {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+
+    &.error-message--not-visible {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  &__return-button {
+    @include headings;
+    font-weight: $boldWeight;
+    color: $green;
+    text-transform: uppercase;
+    text-decoration: underline;
+    letter-spacing: 0.0125rem;
+  }
+}
+
+@keyframes buildIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
