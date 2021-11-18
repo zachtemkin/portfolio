@@ -7,17 +7,19 @@ import "./projectPreview.scss";
 const ProjectPreview = (props) => {
   return (
     <article key={props.id} className='project-preview row'>
-      <div className='image-container mobile-col-12 tablet-col-6'>
+      <Link
+        to={props.slug}
+        className='image-container mobile-col-12 tablet-col-6'>
         <GatsbyImage image={props.hero_image} />
-      </div>
+      </Link>
       <section className='project-preview__project-info mobile-col-12 tablet-col-6'>
-        <p className='project-preview__team'>{props.team}</p>
-        <p className='project-preview__time-frame'>{props.time_frame}</p>
         <h3 className='project-preview__project-title'>
           <Link className='project-preview__project-link' to={props.slug}>
             {props.title}
           </Link>
         </h3>
+        <p className='project-preview__team'>{props.team}</p>
+        <p className='project-preview__time-frame'>{props.time_frame}</p>
         <ul className='project-preview__tags'>
           {props.tags.map((item) => (
             <li className='tag h5'>{item.tag}</li>

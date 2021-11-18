@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import SiteHeader from "./siteHeader";
+import Footer from "./footer";
 import MdxLayout from "./mdxLayout";
 import PropTypes from "prop-types";
 import "./page.scss";
@@ -38,6 +39,7 @@ const Page = ({ pageTitle, children, themeColor }) => {
           />
           {children}
         </main>
+        <Footer />
       </div>
     </MDXProvider>
   );
