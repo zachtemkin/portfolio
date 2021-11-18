@@ -16,10 +16,10 @@
     margin-bottom: 0;
     font-size: 0.85rem;
     color: rgba(0, 0, 0, 0.7);
-    justify-content: center;
+    justify-content: flex-end;
 
     @include tablet {
-      justify-content: left;
+      justify-content: flex-start;
     }
   }
 
@@ -32,12 +32,8 @@
     display: flex;
     flex-flow: row wrap;
     list-style: none;
-    justify-content: center;
+    justify-content: flex-end;
     margin: 0;
-
-    @include tablet {
-      justify-content: flex-end;
-    }
   }
 
   &__link-item {

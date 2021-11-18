@@ -6,7 +6,7 @@ import "./siteHeader.scss";
 const SiteHeader = (props) => {
   return (
     <header className='site-header row'>
-      <div to='/' className='logo-container tablet-col-6 mobile-col-12'>
+      <div to='/' className='logo-container col-6'>
         <Link className='logo' to='/'>
           <svg
             height='100%'
@@ -20,7 +20,7 @@ const SiteHeader = (props) => {
           </svg>
         </Link>
       </div>
-      <nav className='main-nav tablet-col-6 mobile-col-12'>
+      <nav className='main-nav col-6'>
         <ul className='nav-links'>
           <li className='nav-link-item'>
             <Link to='/' className='nav-link-text'>
