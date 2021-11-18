@@ -25,7 +25,16 @@ const Page = ({ pageTitle, children, themeColor }) => {
     <MDXProvider components={shortcodes}>
       <Helmet>
         <meta charSet='utf-8' />
-        <meta name='theme-color' content='#127658' />
+        <meta
+          name='theme-color'
+          media='(prefers-color-scheme: light)'
+          content='#f6f4ee'
+        />
+        <meta
+          name='theme-color'
+          media='(prefers-color-scheme: dark)'
+          content='#127658'
+        />
         <title>
           {pageTitle} | {data.site.siteMetadata.title}
         </title>
