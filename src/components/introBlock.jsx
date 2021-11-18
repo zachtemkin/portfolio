@@ -5,7 +5,7 @@ const IntroBlock = () => {
   return (
     <article className='intro-block row'>
       <h1 className='intro-block__heading mobile-col-12 tablet-col-5 desktop-col-6'>
-        Zach Temkin, Designer
+        Zach Temkin, Design&shy;er
       </h1>
       <div className='intro-block__intro-text mobile-col-12 tablet-col-7 desktop-col-6'>
         <p className=''>

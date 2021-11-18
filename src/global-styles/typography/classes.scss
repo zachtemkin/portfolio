@@ -58,7 +58,7 @@ h6 {
   font-weight: $boldWeight;
   color: $black;
   overflow-wrap: break-word;
-  hyphens: none;
+  hyphens: manual;
 }
 
 h5,
