@@ -1,0 +1,60 @@
+.footer {
+  width: 100%;
+  margin-top: 3rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+
+  @include tablet {
+    padding: 0.5rem 4rem;
+  }
+
+  &__copywrite {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    font-size: 0.85rem;
+    color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+
+    @include tablet {
+      justify-content: left;
+    }
+  }
+
+  &__nav {
+    height: 100%;
+    font-size: 0.85rem;
+  }
+
+  &__links {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    justify-content: center;
+    margin: 0;
+
+    @include tablet {
+      justify-content: flex-end;
+    }
+  }
+
+  &__link-item {
+    padding: 0.25rem;
+    margin: 0;
+
+    &:not(:first-child) {
+      margin-left: 1rem;
+    }
+  }
+
+  &__link-text {
+    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 0.85rem;
+    &:hover {
+      color: $green;
+    }
+  }
+}

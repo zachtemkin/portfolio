@@ -5,8 +5,9 @@ import { getImage } from "gatsby-plugin-image";
 import Page from "../components/page";
 import ProjectInfo from "../components/projectInfo";
 import ProjectBackground from "../components/projectBackground";
+import PostNavigation from "../components/postNavigation";
 
-const ProjectWriteupTemplate = ({ data }) => {
+const ProjectWriteupTemplate = ({ data, pageContext }) => {
   const post = data.mdx;
 
   if (post) {
@@ -32,6 +33,7 @@ const ProjectWriteupTemplate = ({ data }) => {
         <article className='page__write-up row'>
           <MDXRenderer>{post.body}</MDXRenderer>
         </article>
+        <PostNavigation />
       </Page>
     );
   }

@@ -1,25 +1,6 @@
 const path = require("path");
 const { createFilePath } = require("gatsby-source-filesystem");
 
-// exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
-//   if (stage === "build-html") {
-//     actions.setWebpackConfig({
-//       externals: getConfig().externals.concat(function (
-//         context,
-//         request,
-//         callback
-//       ) {
-//         const regex = /^@?firebase(\/(.+))?/;
-//         // exclude firebase products from being bundled, so they will be loaded using require() at runtime.
-//         if (regex.test(request)) {
-//           return callback(null, "umd " + request);
-//         }
-//         callback();
-//       }),
-//     });
-//   }
-// };
-
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
@@ -74,7 +55,9 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  result.data.allMdx.edges.forEach(({ node }) => {
+  const posts = result.data.allMdx.edges;
+
+  posts.forEach(({ node }, index) => {
     if (!node.fields.slug.match(/^\/work\/restricted/)) {
       createPage({
         path: node.fields.slug,

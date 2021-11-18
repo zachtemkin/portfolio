@@ -28,13 +28,8 @@ const SiteHeader = (props) => {
             </Link>
           </li>
           <li className='nav-link-item'>
-            <Link to='/' className='nav-link-text'>
+            <Link to='/about' className='nav-link-text'>
               About
-            </Link>
-          </li>
-          <li className='nav-link-item'>
-            <Link to='/' className='nav-link-text'>
-              Personal Projects
             </Link>
           </li>
         </ul>
