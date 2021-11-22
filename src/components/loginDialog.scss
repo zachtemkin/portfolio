@@ -42,8 +42,8 @@ $transition-duration: 1s;
     @include headings;
     font-weight: $mediumWeight;
     color: $off-white;
-    background-color: $green;
-    border: 2px solid $green;
+    background-color: $main-accent-color;
+    border: 2px solid $main-accent-color;
     border-radius: 3px;
     padding: 0.25rem 1rem;
     cursor: pointer;
@@ -54,7 +54,7 @@ $transition-duration: 1s;
   }
 
   &__email-link {
-    color: $green;
+    color: $main-accent-color;
     text-decoration: underline;
   }
 
@@ -82,7 +82,7 @@ $transition-duration: 1s;
   &__return-button {
     @include headings;
     font-weight: $boldWeight;
-    color: $green;
+    color: $main-accent-color;
     text-transform: uppercase;
     text-decoration: underline;
     letter-spacing: 0.0125rem;
