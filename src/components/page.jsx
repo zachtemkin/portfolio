@@ -10,7 +10,7 @@ import "./page.scss";
 
 const shortcodes = { MdxLayout };
 
-const Page = ({ pageTitle, children, themeColor }) => {
+const Page = ({ pageTitle, children, themeColor, className }) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -41,7 +41,7 @@ const Page = ({ pageTitle, children, themeColor }) => {
         <link rel='canonical' href='http://zach.coffee' />
       </Helmet>
       <div className='page'>
-        <main className='page__main-content'>
+        <main className={`page__main-content page__${className}`}>
           <SiteHeader
             siteTitle={data.site.siteMetadata.title}
             themeColor={themeColor}
@@ -54,6 +54,6 @@ const Page = ({ pageTitle, children, themeColor }) => {
   );
 };
 
-Page.propTypes = { themeColor: PropTypes.string };
+Page.propTypes = { themeColor: PropTypes.string, className: PropTypes.string };
 
 export default Page;

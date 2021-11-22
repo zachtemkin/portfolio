@@ -23,7 +23,6 @@
     "gatsby": "^4.1.5",
     "gatsby-plugin-config": "^1.0.7",
     "gatsby-plugin-create-client-paths": "^4.1.0",
-    "gatsby-plugin-extract-image-colors": "^0.0.14",
     "gatsby-plugin-firebase": "^0.2.0-beta.4",
     "gatsby-plugin-gatsby-cloud": "^4.1.2",
     "gatsby-plugin-image": "^2.1.2",

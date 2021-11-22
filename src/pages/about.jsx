@@ -4,21 +4,34 @@ import Resume from "../static/zach_temkin_resume_2021.pdf";
 
 const AboutPage = () => {
   return (
-    <Page pageTitle='Zach Temkin | About Me'>
+    <Page className='about-page' pageTitle='Zach Temkin | About Me'>
       <main className='row'>
-        <h1 className='tablet-col-10 mobile-col-12'>
-          Hi! I'm Zach. I'm a designer, and general tinker-er living in NYC.
-        </h1>
-        <h2 className='green tablet-col-10 mobile-col-12'>
-          I'm currently a designer at Visa, on the Digital Partnerships team
-        </h2>
-        <a
-          className='resume-link tablet-col-8 mobile-col-12'
-          href={Resume}
-          rel='noreferrer'
-          target='_blank'>
-          Download my Resume
-        </a>
+        <div className='tablet-col-6 mobile-col-12'>
+          <h2>Hi! I'm Zach. I'm a designer, living in NYC.</h2>
+          <a
+            className='resume-link'
+            href={Resume}
+            rel='noreferrer'
+            target='_blank'>
+            Download my Resume
+          </a>
+        </div>
+        <div className='tablet-col-6 mobile-col-12'>
+          <p>
+            I'm a designer with a knack for coding and a deep understanding of
+            business practices. Currently on the Digital Partnerships &amp;
+            Fintech team at Visa, I work to bring new Visa-powered payment
+            experiences to life for existing and potential clients, and to help
+            define Visa’s strategic vision for digital experiences in the
+            future.
+          </p>
+          <p>
+            In my role, I work with stakeholders across Visa's senior
+            leadership, as well as with clients, and partners to deliver designs
+            and prototypes for clear and delightful experiences that address
+            complex user needs.
+          </p>
+        </div>
       </main>
     </Page>
   );

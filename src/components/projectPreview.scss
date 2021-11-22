@@ -3,6 +3,7 @@
 
   &__project-title {
     margin: 0.5rem 0;
+    color: $black;
   }
 
   &__project-info {
@@ -19,7 +20,7 @@
   }
 
   &__team {
-    color: $green;
+    color: $main-accent-color;
   }
 
   &__tags {
