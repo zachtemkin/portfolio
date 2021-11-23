@@ -7,17 +7,12 @@ import "./projectPreview.scss";
 const ProjectPreview = (props) => {
   return (
     <article key={props.id} className='project-preview row'>
-      <Link
-        to={props.slug}
-        className='image-container mobile-col-12 tablet-col-6'>
-        <GatsbyImage image={props.hero_image} />
-      </Link>
-      <section className='project-preview__project-info mobile-col-12 tablet-col-6'>
-        <h3 className='project-preview__project-title'>
+      <section className='project-preview__project-info mobile-col-12 tablet-col-5'>
+        <h2 className='project-preview__project-title'>
           <Link className='project-preview__project-link' to={props.slug}>
             {props.title}
           </Link>
-        </h3>
+        </h2>
         <p className='project-preview__team'>{props.team}</p>
         <p className='project-preview__time-frame'>{props.time_frame}</p>
         <ul className='project-preview__tags'>
@@ -26,6 +21,11 @@ const ProjectPreview = (props) => {
           ))}
         </ul>
       </section>
+      <Link
+        to={props.slug}
+        className='image-container mobile-col-12 tablet-col-7'>
+        <GatsbyImage image={props.hero_image} />
+      </Link>
     </article>
   );
 };

@@ -1,5 +1,5 @@
 .project-preview {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 
   &__project-title {
     margin: 0.5rem 0;
@@ -14,13 +14,17 @@
   &__time-frame,
   &__team {
     @include headings;
-    color: #666;
     font-weight: $mediumWeight;
     margin-bottom: 0.125rem;
   }
 
+  &__time-frame {
+    color: $med-gray;
+    opacity: 0.6;
+  }
+
   &__team {
-    color: $main-accent-color;
+    color: $med-gray;
   }
 
   &__tags {
@@ -31,6 +35,7 @@
     .tag {
       display: inline-flex;
       padding: 0.25em 0.5em;
+      font-size: 0.88rem;
       border: 1px solid rgba(0, 0, 0, 0.1);
       margin-top: 0;
       margin-bottom: 1em;
