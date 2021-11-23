@@ -20,7 +20,7 @@ const SiteHeader = (props) => {
           </svg>
         </Link>
       </div>
-      <nav className='main-nav col-6'>
+      {/* <nav className='main-nav col-6'>
         <ul className='nav-links'>
           <li className='nav-link-item'>
             <Link to='/' className='nav-link-text'>
@@ -33,7 +33,7 @@ const SiteHeader = (props) => {
             </Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
   );
 };

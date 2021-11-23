@@ -1,25 +1,34 @@
 import React from "react";
 import "./introBlock.scss";
+import Resume from "../static/zach_temkin_resume_2021.pdf";
 
 const IntroBlock = () => {
   return (
     <article className='intro-block row'>
-      <h1 className='intro-block__heading mobile-col-12 tablet-col-5 desktop-col-6'>
-        Zach Temkin, Design&shy;er
+      <h1 className='intro-block__heading mobile-col-12 desktop-col-6'>
+        Hi, I'm Zach.
       </h1>
-      <div className='intro-block__intro-text mobile-col-12 tablet-col-7 desktop-col-6'>
-        <p className=''>
-          I'm a designer with a knack for coding and a deep understanding of
-          business practices. Currently on the Digital Partnerships &amp;
-          Fintech team at Visa, I work to bring new Visa-powered payment
-          experiences to life for existing and potential clients, and to help
-          define Visa’s strategic vision for digital experiences in the future.
+      <div className='intro-block__intro-text mobile-col-12 desktop-col-6'>
+        <p>
+          I'm a designer, and front-end tinkerer living, and working in NYC. I
+          love making things, and that's generally the best way I learn about
+          the world.
         </p>
-        <p className=''>
-          In my role, I work with stakeholders across Visa's senior leadership,
-          as well as with clients, and partners to deliver designs and
-          prototypes for clear and delightful experiences that address complex
-          user needs.
+        <p>
+          I've been on various design teams at IBM and Visa, where I'm currently
+          on the Digital Partnerships &amp; Fintech Team. Below are a few
+          professional and personal projects.
+        </p>
+        <p>
+          {" "}
+          You can also{" "}
+          <a
+            className='resume-link'
+            href={Resume}
+            rel='noreferrer'
+            target='_blank'>
+            Download my Resume
+          </a>
         </p>
       </div>
     </article>
