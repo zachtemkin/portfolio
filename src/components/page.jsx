@@ -33,7 +33,7 @@ const Page = ({ pageTitle, children, themeColor, className }) => {
         <meta
           name='theme-color'
           media='(prefers-color-scheme: dark)'
-          content='#e15859'
+          content='#f6f6f6'
         />
         <title>
           {pageTitle} | {data.site.siteMetadata.title}
