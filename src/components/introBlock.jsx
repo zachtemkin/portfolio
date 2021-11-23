@@ -15,13 +15,12 @@ const IntroBlock = () => {
           the world.
         </p>
         <p>
-          I've been on various design teams at IBM and Visa, where I'm currently
-          on the Digital Partnerships &amp; Fintech Team. Below are a few
-          professional and personal projects.
+          I've worked at IBM, and most recently at Visa, where I'm on the
+          Digital Partnerships &amp; Fintech Team.
         </p>
         <p>
           {" "}
-          You can also{" "}
+          Below are a few professional and personal projects. You can also{" "}
           <a
             className='resume-link'
             href={Resume}
