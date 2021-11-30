@@ -74,7 +74,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `personalProjects`,
-        path: `${__dirname}/src/content/work/personal`,
+        path: `${__dirname}/src/content/work/personal/`,
         ignore: [`${__dirname}/src/content/work/restricted/**`],
       },
     },

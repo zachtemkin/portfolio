@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  margin-top: 3rem;
+  margin-top: 6rem;
   padding: 1rem;
   background-color: $light-gray;
   overflow-x: hidden;
@@ -11,6 +11,7 @@
 
   &__copywrite {
     @include headings;
+    font-weight: $mediumWeight;
     display: flex;
     align-items: center;
     margin-bottom: 0;
@@ -19,7 +20,7 @@
     justify-content: flex-end;
 
     @include tablet {
-      justify-content: flex-start;
+      justify-content: flex-end;
     }
   }
 
