@@ -28,7 +28,7 @@ const Page = ({ pageTitle, children, themeColor, className }) => {
         <meta
           name='theme-color'
           media='(prefers-color-scheme: light)'
-          content='#8586a2'
+          content='#f8f8fa'
         />
         <meta
           name='theme-color'

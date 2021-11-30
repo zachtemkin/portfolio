@@ -5,9 +5,7 @@ const Footer = () => {
   return (
     <footer className='footer'>
       <div className='row'>
-        <p className='footer__copywrite tablet-col-6 mobile-col-12'>
-          &copy; 2021 – Zach Temkin
-        </p>
+        <p className='footer__copywrite col-12'>&copy; 2021 – Zach Temkin</p>
         {/* <nav className='footer__nav tablet-col-6 mobile-col-12'>
           <ul className='footer__links'>
             <li className='footer__link-item'>
