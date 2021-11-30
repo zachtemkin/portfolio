@@ -8,7 +8,7 @@ const Footer = () => {
         <p className='footer__copywrite tablet-col-6 mobile-col-12'>
           &copy; 2021 – Zach Temkin
         </p>
-        <nav className='footer__nav tablet-col-6 mobile-col-12'>
+        {/* <nav className='footer__nav tablet-col-6 mobile-col-12'>
           <ul className='footer__links'>
             <li className='footer__link-item'>
               <a
@@ -36,7 +36,7 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </div>
     </footer>
   );

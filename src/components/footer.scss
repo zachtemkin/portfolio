@@ -1,21 +1,21 @@
 .footer {
   width: 100%;
   margin-top: 3rem;
-  padding: 0.5rem 1rem;
-  background-color: transparent;
-  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  background-color: $light-gray;
   overflow-x: hidden;
 
   @include tablet {
-    padding: 0.5rem 4rem;
+    padding: 1rem 4rem;
   }
 
   &__copywrite {
+    @include headings;
     display: flex;
     align-items: center;
     margin-bottom: 0;
     font-size: 0.85rem;
-    color: rgba(0, 0, 0, 0.7);
+    color: $gray-white;
     justify-content: flex-end;
 
     @include tablet {
