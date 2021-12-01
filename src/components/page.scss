@@ -56,7 +56,8 @@
     }
   }
 
-  .resume-link {
+  .resume-link,
+  p > a {
     @include headings;
     font-size: 1.125rem;
     font-weight: $mediumWeight;
