@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMdx(sort: { fields: frontmatter___date, order: ASC }) {
+    allMdx(sort: { fields: frontmatter___order_index, order: ASC }) {
       nodes {
         frontmatter {
           date(formatString: "MMMM D, YYYY")
