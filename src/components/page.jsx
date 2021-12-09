@@ -5,10 +5,11 @@ import { MDXProvider } from "@mdx-js/react";
 import SiteHeader from "./siteHeader";
 import Footer from "./footer";
 import MdxLayout from "./mdxLayout";
+import MdxScreenContainer from "./mdxScreenContainer";
 import PropTypes from "prop-types";
 import "./page.scss";
 
-const shortcodes = { MdxLayout };
+const shortcodes = { MdxLayout, MdxScreenContainer };
 
 const Page = ({ pageTitle, children, themeColor, className }) => {
   const data = useStaticQuery(graphql`

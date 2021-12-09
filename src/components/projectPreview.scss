@@ -1,5 +1,5 @@
 .project-preview {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 
   &__project-title {
     margin: 0.5rem 0;
@@ -8,7 +8,11 @@
 
   &__project-info {
     padding-top: 0.5rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #8586a271;
+  }
+
+  .image-container {
+    display: block;
   }
 
   &__time-frame,
