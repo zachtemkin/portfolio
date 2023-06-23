@@ -34,10 +34,8 @@ const IntroBlock = () => {
       </article>
       <hr />
       <article className='intro-block row'>
-        <h2 className='intro-block__heading mobile-col-12 desktop-col-6'>
-          A bit about being a desginer at Visa
-        </h2>
-        <div className='intro-block__intro-text mobile-col-12 desktop-col-6'>
+        <div className='intro-block__heading mobile-col-12 desktop-col-6'>
+          <h2>A bit about being a desginer at Visa</h2>
           <p>
             Lots of people think that Visa is a credit card company, but similar
             to how Uber doesn’t own cars, and airbnb doesn’t own properties,
@@ -49,6 +47,8 @@ const IntroBlock = () => {
             the last several years has been to position Visa as a platform for
             banks and fintechs to build and innovate on.
           </p>
+        </div>
+        <div className='intro-block__intro-text mobile-col-12 desktop-col-6'>
           <p>
             This has posed some cool opportunities and some tricky challenges as
             a designer. On one hand, we are uniquely positioned within the
