@@ -32,7 +32,7 @@ const IntroBlock = () => {
           </p>
         </div>
       </article>
-      <hr />
+      {/* <hr />
       <article className='intro-block row'>
         <div className='intro-block__heading mobile-col-12 desktop-col-6'>
           <h2>A bit about being a desginer at Visa</h2>
@@ -71,7 +71,7 @@ const IntroBlock = () => {
             strategy.
           </p>
         </div>
-      </article>
+      </article> */}
     </>
   );
 };
