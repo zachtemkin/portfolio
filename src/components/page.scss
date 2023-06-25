@@ -68,6 +68,8 @@
   }
 
   .live-project-link {
+    display: inline-block;
+    margin-bottom: 1rem;
     padding: 0.5em 1.5em;
     border: 1px solid $black;
     border-radius: 5px;
