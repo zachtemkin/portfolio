@@ -11,13 +11,9 @@ const IntroBlock = () => {
         </h1>
         <div className='intro-block__intro-text mobile-col-12 desktop-col-6'>
           <p>
-            I’m a curious tinkerer, who learns by doing. I like to work on
-            projects that present opportunities to think strategically and
-            execute nimbly.
-          </p>
-          <p>
-            I currently work on shaping ambiguous opportunities into high-impact
-            projects on a a Growth Design team at Visa, in New York.
+            I'm a multidisciplinary designer and front-end tinkerer currently
+            working to shape ambiguous opportunities into high-impact projects
+            on a a Growth Design team at Visa, in New York.
           </p>
           <p>
             {" "}
