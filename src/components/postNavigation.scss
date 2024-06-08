@@ -15,7 +15,10 @@
   }
 
   &__link-text {
-    font-style: italic;
+    // font-style: italic;
+    font-family: $headerFontFamilies;
+    font-weight: bold;
+    font-size: 1.125rem;
     display: block;
     text-decoration: underline;
     text-align: right;
