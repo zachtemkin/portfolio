@@ -1,25 +1,62 @@
 .project-preview {
-  margin-bottom: 4rem;
+  margin-bottom: 4.5em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 18px 18px 18px 72px;
+  background: #ffffff;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05),
+    0px 24px 36px rgba(0, 0, 0, 0.1);
+  border-radius: 36px;
+  gap: 4.5em;
+
+  &__project-info {
+    display: flex;
+    // flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+    padding: 96px 0px;
+    margin: 0;
+    gap: 1.5em;
+  }
 
   &__project-title {
-    margin: 0.5rem 0;
+    margin: 0;
     color: $black;
   }
 
-  &__project-info {
-    padding-top: 0.5rem;
-    border-top: 1px solid #8586a271;
+  .image-container {
+    flex: 1;
+    background: #8586a2;
+    border-radius: 18px;
+    align-self: stretch;
+    margin: 0;
+    overflow: hidden;
   }
 
-  .image-container {
-    display: block;
+  .team-and-timeframe {
+    display: flex;
+    flex-flow: row;
+    gap: 0.5em;
   }
 
   &__time-frame,
+  &__index,
+  &__blurb,
   &__team {
     @include headings;
+    font-weight: $boldWeight;
+    font-size: 1.125em;
+    margin: 0;
+    line-height: 115%;
+  }
+
+  &__blurb {
     font-weight: $mediumWeight;
-    margin-bottom: 0.125rem;
+    color: $med-gray;
   }
 
   &__time-frame {

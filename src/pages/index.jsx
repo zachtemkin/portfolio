@@ -15,6 +15,8 @@ const IndexPage = ({ data }) => {
           title={node.frontmatter.title}
           team={node.frontmatter.team}
           time_frame={node.frontmatter.time_frame}
+          order_index={node.frontmatter.order_index}
+          blurb={node.frontmatter.background.text}
           hero_image={
             node.frontmatter.hero_image.childImageSharp.gatsbyImageData
           }
@@ -32,8 +34,12 @@ export const query = graphql`
         frontmatter {
           date(formatString: "MMMM D, YYYY")
           title
+          order_index
           time_frame
           team
+          background {
+            text
+          }
           tags {
             tag
           }
