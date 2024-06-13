@@ -13,14 +13,14 @@
 
   &__project-info {
     display: flex;
-    // flex: 1;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     align-self: stretch;
     padding: 96px 0px;
     margin: 0;
-    gap: 1.5em;
+    gap: 1.25em;
   }
 
   &__project-title {
@@ -49,13 +49,18 @@
   &__team {
     @include headings;
     font-weight: $boldWeight;
-    font-size: 1.125em;
+    font-size: 1em;
     margin: 0;
     line-height: 115%;
   }
 
+  &__index {
+    font-weight: $boldWeight;
+  }
+
   &__blurb {
     font-weight: $mediumWeight;
+    line-height: 120%;
     color: $med-gray;
   }
 
@@ -66,6 +71,10 @@
 
   &__team {
     color: $med-gray;
+  }
+
+  &__arrow-button {
+    margin-top: 0.5em;
   }
 
   &__tags {

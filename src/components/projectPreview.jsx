@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import "./projectPreview.scss";
+import ArrowButton from "../images/arrow-button.svg";
 
 const ProjectPreview = (props) => {
   const projectNumber = props.order_index.toString().padStart(2, "0");
@@ -20,6 +21,9 @@ const ProjectPreview = (props) => {
           <p className='project-preview__time-frame'>{props.time_frame}</p>
         </div>
         <p className='project-preview__blurb'>{props.blurb}</p>
+        <Link to={props.slug} className='project-preview__arrow-button'>
+          <ArrowButton />
+        </Link>
       </section>
       <Link
         to={props.slug}
