@@ -1,11 +1,15 @@
 .site-header {
-  padding-top: 3rem;
-  margin-bottom: 3rem;
+  // padding: 54px 24px 36px 24px;
+  padding-top: 72px;
+  margin-bottom: 72px;
   overflow: hidden;
 
+  @include mobile {
+    // padding: 54px 18px 18px 18px;
+  }
+
   @include tablet {
-    padding-top: 3rem;
-    margin-bottom: 6rem;
+    // padding: 54px 18px 18px 18px;
   }
 }
 
@@ -15,7 +19,7 @@
   height: 100%;
 
   @include tablet {
-    width: 5rem;
+    width: 6rem;
   }
 }
 

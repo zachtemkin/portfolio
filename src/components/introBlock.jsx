@@ -5,11 +5,9 @@ import Resume from "../static/zach_temkin_resume_2021.pdf";
 const IntroBlock = () => {
   return (
     <>
-      <article className='intro-block row'>
-        <h1 className='intro-block__heading mobile-col-12 desktop-col-6'>
-          Hi, I'm Zach.
-        </h1>
-        <div className='intro-block__intro-text mobile-col-12 desktop-col-6'>
+      <article className='intro-block'>
+        <h1 className='intro-block__heading'>Hi, I'm Zach.</h1>
+        <div className='intro-block__intro-text'>
           <p>
             I'm a multidisciplinary designer and front-end tinkerer currently
             working to shape ambiguous opportunities into high-impact projects

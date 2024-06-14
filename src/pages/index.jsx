@@ -17,6 +17,7 @@ const IndexPage = ({ data }) => {
           time_frame={node.frontmatter.time_frame}
           order_index={node.frontmatter.order_index}
           blurb={node.frontmatter.background.text}
+          accent_color={node.frontmatter.accent_color}
           hero_image={
             node.frontmatter.hero_image.childImageSharp.gatsbyImageData
           }
@@ -43,6 +44,7 @@ export const query = graphql`
           tags {
             tag
           }
+          accent_color
           hero_image {
             childImageSharp {
               gatsbyImageData(placeholder: BLURRED)

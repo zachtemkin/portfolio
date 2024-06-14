@@ -7,16 +7,26 @@ import ArrowButton from "../images/arrow-button.svg";
 
 const ProjectPreview = (props) => {
   const projectNumber = props.order_index.toString().padStart(2, "0");
+  const accentColor = props.accent_color ? props.accent_color : "#48485F";
+
   return (
-    <article key={props.id} className='project-preview row'>
-      <section className='project-preview__project-info mobile-col-12 tablet-col-6'>
-        <p className='project-preview__index'>{projectNumber}</p>
+    <article key={props.id} className='project-preview'>
+      <Link to={props.slug} className='image-container'>
+        <GatsbyImage image={props.hero_image} style={{ height: "100%" }} />
+      </Link>
+      <section className='project-preview__project-info'>
+        <p className='project-preview__index' style={{ color: accentColor }}>
+          {projectNumber}
+        </p>
         <h2 className='project-preview__project-title'>
-          <Link className='project-preview__project-link' to={props.slug}>
+          <Link
+            className='project-preview__project-link'
+            to={props.slug}
+            style={{ color: accentColor }}>
             {props.title}
           </Link>
         </h2>
-        <div className='team-and-timeframe'>
+        <div className='team-and-timeframe' style={{ color: accentColor }}>
           <p className='project-preview__team'>{props.team}</p>
           <p className='project-preview__time-frame'>{props.time_frame}</p>
         </div>
@@ -25,15 +35,6 @@ const ProjectPreview = (props) => {
           <ArrowButton />
         </Link>
       </section>
-      <Link
-        to={props.slug}
-        className='image-container mobile-col-12 tablet-col-6'>
-        <GatsbyImage
-          image={props.hero_image}
-          style={{ height: "100%" }}
-          objectFit='cover'
-        />
-      </Link>
     </article>
   );
 };
@@ -50,6 +51,7 @@ ProjectPreview.propTypes = {
   tags: PropTypes.array,
   theme_color: PropTypes.string,
   blurb: PropTypes.string,
+  accent_color: PropTypes.string,
 };
 
 export default ProjectPreview;

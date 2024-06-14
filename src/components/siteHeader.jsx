@@ -5,8 +5,8 @@ import "./siteHeader.scss";
 
 const SiteHeader = (props) => {
   return (
-    <header className='site-header row'>
-      <div to='/' className='logo-container col-6'>
+    <header className='site-header'>
+      <div to='/' className='logo-container'>
         <Link className='logo' to='/'>
           <svg
             height='100%'

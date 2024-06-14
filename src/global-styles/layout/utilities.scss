@@ -1,14 +1,15 @@
 $large-screen: 1080px;
-$small-screen: 721px;
+$med-screen: 960px;
+$small-screen: 880px;
 
 @mixin mobile {
-  @media screen and (max-width: ($small-screen)) {
+  @media screen and (min-width: ($small-screen)) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media screen and (min-width: $small-screen) {
+  @media screen and (min-width: $med-screen) {
     @content;
   }
 }

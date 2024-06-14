@@ -1,7 +1,40 @@
 .intro-block {
-  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  margin-bottom: 1rem;
+  // padding: 36px 24px 36px 24px;
+  // border: 1px solid rgba($light-gray, 0.3);
+  border-radius: 24px;
+
+  @include mobile {
+    flex-direction: row;
+    margin-bottom: 4.5rem;
+    // padding: 36px 18px 36px 18px;
+    flex-direction: row;
+    gap: 54px;
+  }
 
   @include tablet {
-    margin-bottom: 6em;
+    // padding: 36px 36px 36px 36px;
+    gap: 72px;
+  }
+
+  &__heading {
+    flex: 1;
+    margin-bottom: 1rem;
+    align-self: stretch;
+
+    @include mobile {
+      // align-self: center;
+    }
+  }
+
+  &__intro-text {
+    flex: 1;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
 }

@@ -5,7 +5,7 @@
     padding: 0 1rem;
     // overflow-x: hidden;
 
-    @include tablet {
+    @include mobile {
       padding: 0 2.5rem;
     }
   }
